@@ -5,7 +5,7 @@ require "doubleVision"
 require 'optparse'
 
 options = { :gamma => 0.023, :fade1 => 220/255.0, :fade2 => 210/255.0, :shift => 10}
-USAGE = "Usage: doubleVision [options] withgamma.png withoutgamma.png out.png"
+USAGE = "Usage: doubleVision [options] image.png thumbnail.png output.png"
 
 optParser = OptionParser.new do |opts|
   opts.banner = USAGE
