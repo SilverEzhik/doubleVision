@@ -36,18 +36,18 @@ module DoubleVision
       raise ArgumentError, "Image sizes must have the same dimensions."
     end
 
-    out = ChunkyPNG::Image.new(img1.dimension.width*2, img1.dimension.height*2,ChunkyPNG::Color::BLACK)
+    out = ChunkyPNG::Image.new(img1.dimension.width, img1.dimension.height,ChunkyPNG::Color::BLACK)
 
     out.dimension.width.times do |x|
       out.dimension.height.times do |y|
         if x % 2 == 0 && y % 2 == 0
-          col = img1[x/2,y/2]
+          col = img1[x,y]
           r = trans(ChunkyPNG::Color.r(col),options)
           g = trans(ChunkyPNG::Color.g(col),options)
           b = trans(ChunkyPNG::Color.b(col),options)
           out[x,y] = ChunkyPNG::Color.rgb(r,g,b)
         else
-          col = img2[x/2,y/2]
+          col = img2[x,y]
           r = (ChunkyPNG::Color.r(col) * options[:fade2]).round
           g = (ChunkyPNG::Color.g(col) * options[:fade2]).round
           b = (ChunkyPNG::Color.b(col) * options[:fade2]).round
