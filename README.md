@@ -48,17 +48,9 @@ For example:
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'doubleVision'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install doubleVision
+    bundle install
+    rake build
+    gem install pkg/doubleVision-0.0.1.gem
 
 ## Usage
 
