@@ -50,7 +50,7 @@ For example:
 
     bundle install
     rake build
-    gem install pkg/doubleVision-0.0.1.gem
+    gem install pkg/doubleVision-0.0.2.gem
 
 ## Usage
 
